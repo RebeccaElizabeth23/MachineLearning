@@ -155,7 +155,7 @@ training &lt;- training[inTrain,]
 validating &lt;- training[-inTrain,]</code></pre>
 </div>
 <div id="random-forest-modelling" class="section level1">
-<h1>Random Forest Modelling</h1>
+<h1>Random Forest Modelling and Cross-Validation</h1>
 <p>We now want to perform a random forest model based on the training data set and use the remaining 53 variables to classify the movement type. Random forest was chosen as it is equipt to deal with the large number of remaining variables and will limit overfitting often seen in decision tree models (although calculation speed will be slower). As we can see below, the model is unsuprisingly accurate at classified all the data points into their correct classe.</p>
 <pre class="r"><code>modfit &lt;- randomForest(classe ~., data=training)
 table(predict(modfit, training), training$classe)</code></pre>
