@@ -166,24 +166,24 @@ table(predict(modfit, training), training$classe)</code></pre>
 ##   C    0    0 2567    0    0
 ##   D    0    0    0 2412    0
 ##   E    0    0    0    0 2706</code></pre>
-<p>The next thing to do is to use the same model we’ve just created based on the training data set and apply it to the validation data set. This will then give an out-sample error term to show how accurate the model is. As we can see below, the model has accuratly classified all of the <code>3670</code> cases in validating data set with an out-sample accuracy of 1, suggesting the model is significantly better at classifying the exercise types from the fitness band data compared to chance.</p>
+<p>The next thing to do is to use the same model we’ve just created based on the training data set and apply it to the validation data set. This will then give an out-sample error term to show how accurate the model is. As we can see below, the model has accuratly classified all of the <code>3676</code> cases in validating data set with an out-sample accuracy of 1, suggesting the model is significantly better at classifying the exercise types from the fitness band data compared to chance.</p>
 <pre class="r"><code>valid_prediction &lt;- predict(modfit, validating)
 confusionMatrix(valid_prediction, validating$classe)</code></pre>
 <pre><code>## Confusion Matrix and Statistics
 ## 
 ##           Reference
 ## Prediction    A    B    C    D    E
-##          A 1021    0    0    0    0
-##          B    0  739    0    0    0
-##          C    0    0  651    0    0
-##          D    0    0    0  593    0
-##          E    0    0    0    0  666
+##          A 1039    0    0    0    0
+##          B    0  723    0    0    0
+##          C    0    0  643    0    0
+##          D    0    0    0  594    0
+##          E    0    0    0    0  677
 ## 
 ## Overall Statistics
 ##                                     
 ##                Accuracy : 1         
 ##                  95% CI : (0.999, 1)
-##     No Information Rate : 0.2782    
+##     No Information Rate : 0.2826    
 ##     P-Value [Acc &gt; NIR] : &lt; 2.2e-16 
 ##                                     
 ##                   Kappa : 1         
@@ -196,9 +196,9 @@ confusionMatrix(valid_prediction, validating$classe)</code></pre>
 ## Specificity            1.0000   1.0000   1.0000   1.0000   1.0000
 ## Pos Pred Value         1.0000   1.0000   1.0000   1.0000   1.0000
 ## Neg Pred Value         1.0000   1.0000   1.0000   1.0000   1.0000
-## Prevalence             0.2782   0.2014   0.1774   0.1616   0.1815
-## Detection Rate         0.2782   0.2014   0.1774   0.1616   0.1815
-## Detection Prevalence   0.2782   0.2014   0.1774   0.1616   0.1815
+## Prevalence             0.2826   0.1967   0.1749   0.1616   0.1842
+## Detection Rate         0.2826   0.1967   0.1749   0.1616   0.1842
+## Detection Prevalence   0.2826   0.1967   0.1749   0.1616   0.1842
 ## Balanced Accuracy      1.0000   1.0000   1.0000   1.0000   1.0000</code></pre>
 </div>
 <div id="test-predictions" class="section level1">
